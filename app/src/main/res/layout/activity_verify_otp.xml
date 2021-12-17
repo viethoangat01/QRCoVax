@@ -18,7 +18,7 @@
             android:layout_height="@dimen/dp_130"
             android:layout_marginTop="@dimen/dp_80"
             android:contentDescription="@string/app_name"
-            android:src="@android:drawable/ic_menu_add" />
+            android:src="@drawable/verifyotp_verifyicon_128" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -133,7 +133,6 @@
                 android:layout_width="@dimen/dp_40"
                 android:layout_height="@dimen/dp_45"
                 android:gravity="center"
-                android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
@@ -158,25 +157,40 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/textview_verifyotp_resend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_8"
                 android:text="RESEND OTP"
                 android:textColor="@color/colorAccent"
-                android:textSize="@dimen/sp_15" />
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <Button
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_30"
-            android:background="@drawable/all_backgroundbutton"
-            android:text="@string/verifyotp_verify"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/sp_16"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/button_verifyotp_verify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_30"
+                android:background="@drawable/all_backgroundbutton"
+                android:text="@string/verifyotp_verify"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressbar_verifyotp"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

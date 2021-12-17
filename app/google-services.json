@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "261401731168",
+    "project_id": "qrcovax",
+    "storage_bucket": "qrcovax.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261401731168:android:4d1fbf662ac5a4b074a305",
+        "android_client_info": {
+          "package_name": "com.example.qrcovax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261401731168-gm8rk1bg0duvvfsdjla096o5qekntjr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.qrcovax",
+            "certificate_hash": "88823938c86b1884ece865da872a54ce3043312f"
+          }
+        },
+        {
+          "client_id": "261401731168-cuabdno5fmethku9nbrjvb7b78n9ovm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBNHtF8qfbF3aEm2uWPVqOzW0QTtJwSgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261401731168-cuabdno5fmethku9nbrjvb7b78n9ovm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

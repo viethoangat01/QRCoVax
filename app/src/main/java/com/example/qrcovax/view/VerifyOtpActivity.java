@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qrcovax.R;
+import com.example.qrcovax.utils.Constants;
+import com.example.qrcovax.utils.Session;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -30,20 +32,23 @@ public class VerifyOtpActivity extends AppCompatActivity {
     private EditText edtCode1, edtCode2, edtCode3, edtCode4, edtCode5, edtCode6;
     private ProgressBar pbLoad;
     private TextView tvPhoneNumber, tvResend;
-    private static final String PHONENUMBER = "phonenumber";
-    private static final String VERIFICATION_ID = "verificationId";
+    ///////
     private static final String FORMAT_PHONE = "(+84) %s";
-
-    private String verificationId;
+    private static final String PHONENUMBER = "phonenumber";
+    private static final String USER_UID = "userUID";
+    private static final String VERIFICATION_ID = "verificationId";
+    ////////
+    private String verificationId = Constants.INIT_STRING,
+            phoneNumber = Constants.INIT_STRING;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
         initView();
-        verificationId = getIntent().getStringExtra(VERIFICATION_ID);
+        setDataFromIntent();
         tvPhoneNumber.setText(String.format(
-                FORMAT_PHONE, getIntent().getStringExtra(PHONENUMBER)
+                FORMAT_PHONE, phoneNumber
         ));
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +68,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
                         edtCode4.getText().toString() +
                         edtCode5.getText().toString() +
                         edtCode6.getText().toString();
-                String verificationId = getIntent().getStringExtra(VERIFICATION_ID);
+                // String verificationId = getIntent().getStringExtra(VERIFICATION_ID);
                 if (verificationId != null) {
                     pbLoad.setVisibility(View.VISIBLE);
                     btnVerify.setVisibility(View.INVISIBLE);
@@ -77,9 +82,12 @@ public class VerifyOtpActivity extends AppCompatActivity {
                                     pbLoad.setVisibility(View.GONE);
                                     btnVerify.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()) {
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        //Save session
+                                        Session.save(getApplicationContext(), USER_UID, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                        Session.save(getApplicationContext(), PHONENUMBER, phoneNumber);
+                                        Session.save(getApplicationContext(), Constants.SESSION_STATUS, "true");
+                                        Intent intent = new Intent(getApplicationContext(), RegisterProfileActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
                                         startActivity(intent);
                                     } else {
                                         Toast.makeText(VerifyOtpActivity.this, R.string.verifyotp_codeinvalid, Toast.LENGTH_SHORT).show();
@@ -120,6 +128,11 @@ public class VerifyOtpActivity extends AppCompatActivity {
             }
         });
         setupOTPInputs();
+    }
+
+    private void setDataFromIntent() {
+        verificationId = getIntent().getStringExtra(VERIFICATION_ID);
+        phoneNumber = getIntent().getStringExtra(PHONENUMBER);
     }
 
     private void initView() {

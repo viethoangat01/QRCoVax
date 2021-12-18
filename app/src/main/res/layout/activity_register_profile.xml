@@ -2,8 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:overScrollMode="never"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    tools:context=".view.RegisterProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textview_dialogmain_avatar"
+            android:id="@+id/textview_registerprofile_avatar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/all_avatar_128"
@@ -19,12 +21,12 @@
             android:layout_marginTop="@dimen/dp_30" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_nametitle"
+            android:id="@+id/textview_registerprofile_nametitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview_dialogmain_avatar"
+            android:layout_below="@id/textview_registerprofile_avatar"
             android:layout_marginTop="@dimen/dp_20"
-            android:text="@string/dialogmain_nametitle"
+            android:text="@string/registerprofile_nametitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -32,34 +34,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_nametitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/textview_dialogmain_avatar"
+            android:layout_toRightOf="@id/textview_registerprofile_nametitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/textview_registerprofile_avatar"
             android:layout_marginTop="@dimen/dp_20"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_name"
+            android:id="@+id/edittext_registerprofile_name"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_nametitle"
+            android:layout_below="@id/textview_registerprofile_nametitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:maxLength="15" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_birthdaytitle"
+            android:id="@+id/textview_registerprofile_birthdaytitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_name"
+            android:layout_below="@id/edittext_registerprofile_name"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_birthdaytitle"
+            android:text="@string/registerprofile_birthdaytitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -67,34 +72,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_birthdaytitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/edittext_dialogmain_name"
+            android:layout_toRightOf="@id/textview_registerprofile_birthdaytitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/edittext_registerprofile_name"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_birthday"
+            android:id="@+id/edittext_registerprofile_birthday"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_birthdaytitle"
+            android:layout_below="@id/textview_registerprofile_birthdaytitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:inputType="date"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:maxLength="15" />/>
 
         <TextView
-            android:id="@+id/textview_dialogmain_gendertitle"
+            android:id="@+id/textview_registerprofile_gendertitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_birthday"
+            android:layout_below="@id/edittext_registerprofile_birthday"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_gendertitle"
+            android:text="@string/registerprofile_gendertitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -102,38 +111,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_gendertitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/edittext_dialogmain_birthday"
+            android:layout_toRightOf="@id/textview_registerprofile_gendertitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/edittext_registerprofile_birthday"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <RadioGroup
-            android:id="@+id/radiogroup_dialogmain"
+            android:id="@+id/radiogroup_registerprofile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview_dialogmain_gendertitle"
+            android:layout_below="@id/textview_registerprofile_gendertitle"
             android:orientation="horizontal"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15">
 
             <RadioButton
-                android:id="@+id/radiobutton_dialogmain_male"
+                android:id="@+id/radiobutton_registerprofile_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Nam" />
 
             <RadioButton
-                android:id="@+id/radiobutton_dialogmain_female"
+                android:id="@+id/radiobutton_registerprofile_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Nữ" />
 
             <RadioButton
-                android:id="@+id/radiobutton_dialogmain_other"
+                android:id="@+id/radiobutton_registerprofile_other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -141,12 +150,12 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textview_dialogmain_phonenumbertitle"
+            android:id="@+id/textview_registerprofile_phonenumbertitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/radiogroup_dialogmain"
+            android:layout_below="@id/radiogroup_registerprofile"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_phonenumbertitle"
+            android:text="@string/registerprofile_phonenumbertitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -154,19 +163,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_phonenumbertitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/radiogroup_dialogmain"
+            android:layout_toRightOf="@id/textview_registerprofile_phonenumbertitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/radiogroup_registerprofile"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_phonenumber"
+            android:id="@+id/textview_registerprofile_phonenumber"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorGrayX11"
-            android:layout_below="@id/textview_dialogmain_phonenumbertitle"
+            android:layout_below="@id/textview_registerprofile_phonenumbertitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
@@ -177,12 +186,12 @@
             android:textColor="@color/colorRaisinBlack" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_idtitle"
+            android:id="@+id/textview_registerprofile_idtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview_dialogmain_phonenumber"
+            android:layout_below="@id/textview_registerprofile_phonenumber"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_id"
+            android:text="@string/registerprofile_id"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -190,19 +199,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_idtitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/textview_dialogmain_phonenumber"
+            android:layout_toRightOf="@id/textview_registerprofile_idtitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/textview_registerprofile_phonenumber"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_id"
+            android:id="@+id/edittext_registerprofile_id"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_idtitle"
+            android:layout_below="@id/textview_registerprofile_idtitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
@@ -210,25 +219,28 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
             android:inputType="number"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:maxLength="15" />/>
 
         <TextView
-            android:id="@+id/textview_dialogmain_emailtitle"
+            android:id="@+id/textview_registerprofile_emailtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_id"
+            android:layout_below="@id/edittext_registerprofile_id"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_emailtitle"
+            android:text="@string/registerprofile_emailtitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_email"
+            android:id="@+id/edittext_registerprofile_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_emailtitle"
+            android:layout_below="@id/textview_registerprofile_emailtitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
@@ -236,23 +248,24 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
             android:inputType="textEmailAddress"
-            android:hint="@string/dialogmain_inputhint" />
+            android:imeOptions="actionNext"
+            android:hint="@string/registerprofile_inputhint" />
 
         <View
-            android:id="@+id/view_dialogmain_line"
+            android:id="@+id/view_registerprofile_line"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_10"
             android:background="@color/colorBrightGray"
-            android:layout_below="@id/edittext_dialogmain_email"
+            android:layout_below="@id/edittext_registerprofile_email"
             android:layout_marginTop="@dimen/dp_20" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_citytitle"
+            android:id="@+id/textview_registerprofile_citytitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/view_dialogmain_line"
+            android:layout_below="@id/view_registerprofile_line"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_citytitle"
+            android:text="@string/registerprofile_citytitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -260,34 +273,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_citytitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/view_dialogmain_line"
+            android:layout_toRightOf="@id/textview_registerprofile_citytitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/view_registerprofile_line"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_city"
+            android:id="@+id/edittext_registerprofile_city"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_citytitle"
+            android:layout_below="@id/textview_registerprofile_citytitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:maxLength="15" />/>
 
         <TextView
-            android:id="@+id/textview_dialogmain_districttitle"
+            android:id="@+id/textview_registerprofile_districttitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_city"
+            android:layout_below="@id/edittext_registerprofile_city"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_districttitle"
+            android:text="@string/registerprofile_districttitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -295,34 +311,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_districttitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/edittext_dialogmain_city"
+            android:layout_toRightOf="@id/textview_registerprofile_districttitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/edittext_registerprofile_city"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_district"
+            android:id="@+id/edittext_registerprofile_district"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_districttitle"
+            android:layout_below="@id/textview_registerprofile_districttitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:maxLength="15" />/>
 
         <TextView
-            android:id="@+id/textview_dialogmain_wardttitle"
+            android:id="@+id/textview_registerprofile_wardttitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_district"
+            android:layout_below="@id/edittext_registerprofile_district"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="@string/dialogmain_wardtitle"
+            android:text="@string/registerprofile_wardtitle"
             android:layout_marginLeft="@dimen/dp_15"
             android:textColor="@color/colorRaisinBlack"
             android:textSize="@dimen/sp_16" />
@@ -330,32 +349,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_wardttitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/edittext_dialogmain_district"
+            android:layout_toRightOf="@id/textview_registerprofile_wardttitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/edittext_registerprofile_district"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_ward"
+            android:id="@+id/edittext_registerprofile_ward"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_wardttitle"
+            android:layout_below="@id/textview_registerprofile_wardttitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:imeOptions="actionNext"
+            android:hint="@string/registerprofile_inputhint" />
 
         <TextView
-            android:id="@+id/textview_dialogmain_villagettitle"
+            android:id="@+id/textview_registerprofile_villagettitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edittext_dialogmain_ward"
+            android:layout_below="@id/edittext_registerprofile_ward"
             android:layout_marginTop="@dimen/dp_15"
             android:text="Thôn/Xóm/Số nhà"
             android:layout_marginLeft="@dimen/dp_15"
@@ -365,29 +385,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textview_dialogmain_villagettitle"
-            android:text="@string/dialogmain_star"
-            android:layout_below="@id/edittext_dialogmain_ward"
+            android:layout_toRightOf="@id/textview_registerprofile_villagettitle"
+            android:text="@string/registerprofile_star"
+            android:layout_below="@id/edittext_registerprofile_ward"
             android:layout_marginTop="@dimen/dp_15"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="@dimen/dp_3" />
 
         <EditText
-            android:id="@+id/edittext_dialogmain_village"
+            android:id="@+id/edittext_registerprofile_village"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorSonicSilver"
-            android:layout_below="@id/textview_dialogmain_villagettitle"
+            android:layout_below="@id/textview_registerprofile_villagettitle"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
             android:textSize="@dimen/sp_15"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_10"
-            android:hint="@string/dialogmain_inputhint" />
+            android:hint="@string/registerprofile_inputhint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:maxLength="15" />
 
         <Button
-            android:id="@+id/button_dialogmain_save"
+            android:id="@+id/button_registerprofile_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_30"
@@ -395,10 +418,10 @@
             android:layout_marginLeft="@dimen/dp_60"
             android:layout_marginRight="@dimen/dp_60"
             android:background="@drawable/all_backgroundbutton"
-            android:text="@string/dialogmain_saveprofile"
+            android:text="@string/registerprofile_saveprofile"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/sp_15"
-            android:layout_below="@id/edittext_dialogmain_village" />
+            android:layout_below="@id/edittext_registerprofile_village" />
 
 
     </RelativeLayout>

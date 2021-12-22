@@ -36,6 +36,8 @@ public class RegisterProfileActivity extends AppCompatActivity {
     //////
     private static final String PHONENUMBER = "phonenumber";
     private static final String USER_UID = "userUID";
+    private static final String CCCD = "cccd";
+    private static final String USER_NAME = "name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,8 @@ public class RegisterProfileActivity extends AppCompatActivity {
                     Toast.makeText(RegisterProfileActivity.this, "Thông tin không được để trống!", Toast.LENGTH_SHORT).show();
                 } else {
                     String id = Session.read(getApplicationContext(), USER_UID, Constants.INIT_STRING);
+                    Session.save(getApplicationContext(), CCCD, edtID.getText().toString());
+                    Session.save(getApplicationContext(), USER_NAME, edtName.getText().toString());
                     User user = new User(id, edtID.getText().toString().trim(), edtName.getText().toString().trim(), edtBirthday.getText().toString().trim(), gender, edtEmail.getText().toString().trim(),
                             Session.read(getApplicationContext(), PHONENUMBER, Constants.INIT_STRING).trim(),
                             edtDistrict.getText().toString().trim(), edtWard.getText().toString().trim(), edtVillage.getText().toString().trim());

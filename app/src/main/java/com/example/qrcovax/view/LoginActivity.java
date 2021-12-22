@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qrcovax.R;
+import com.example.qrcovax.utils.Constants;
+import com.example.qrcovax.utils.Session;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -64,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                                     super.onCodeSent(verificationId, forceResendingToken);
                                     pbSend.setVisibility(View.GONE);
                                     btnLogin.setVisibility(View.VISIBLE);
+                                    Session.save(getApplicationContext(), Constants.SESSION_STATUS, "true");
                                     Intent intent = new Intent(getApplicationContext(), VerifyOtpActivity.class);
                                     intent.putExtra(PHONENUMBER, edtPhoneNumber.getText().toString());
                                     intent.putExtra(VERIFICATION_ID, verificationId);
